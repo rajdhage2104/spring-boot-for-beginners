@@ -58,5 +58,5 @@ jobs:
         run: docker pull 8956366123/spring-boot-for-begineers:today
 
       - name: deploy to container
-        run: docker run -d --name Hello -p 3000:3000 8956366123/spring-boot-for-begineers:today
+        run: docker run -d --name Helloo -p 3000:3000 8956366123/spring-boot-for-begineers:today
  
