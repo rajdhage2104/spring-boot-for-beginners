@@ -49,4 +49,14 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-for-begineers:today
 
+
+  deploy:
+   needs: build-deploy
+   runs-on: [self hosted]
+   steps:
+      - name: docker pull image 
+        run: docker pull 8956366123/spring-boot-for-begineers:today
+
+      - name: deploy to container
+        run: docker run -d --name Hello -p 3000:3000 8956366123/spring-boot-for-begineers:today
  
